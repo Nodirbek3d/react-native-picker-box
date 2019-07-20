@@ -32,6 +32,7 @@ class PickerBox extends Component {
         ]),
         maxHeight: PropTypes.number,
         statusbar: PropTypes.bool,
+        cancelButtonTitle: PropTypes.string,
         itemTextColor: PropTypes.string,
         separatorColor: PropTypes.string,
         prevTextColor: PropTypes.string
@@ -140,7 +141,7 @@ class PickerBox extends Component {
                         renderItem={this._renderItem}
                     />
                     <TouchableOpacity style={styles.btnVoltar} onPress={this._closePicker}>
-                        <Text style={[styles.text, {color: this.props.prevTextColor}]}>VOLTAR</Text>
+                        <Text style={[styles.text, {color: this.props.prevTextColor}]}>{this.props.cancelButtonTitle || "Cancel"}</Text>
                     </TouchableOpacity>
                 </Animated.View>
             </View>
